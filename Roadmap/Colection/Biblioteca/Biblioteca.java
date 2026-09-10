@@ -65,7 +65,7 @@ public class Biblioteca {
         return filaClientes.size(); //retorna so o tamanho
     }
     public void fecharLoja(){
-        for (Cliente cliente : filaClientes) filaClientes.poll();
+        while (!filaClientes.isEmpty()) filaClientes.poll();
     }
     static class ClienteComparator implements Comparator<Cliente>{
         @Override
