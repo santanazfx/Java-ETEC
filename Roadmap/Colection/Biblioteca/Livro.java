@@ -3,7 +3,7 @@ package Colection.Biblioteca;
 import java.util.*;
 
 public class Livro {
-    private int isbn;
+    private Integer isbn;
     private String titulo;
     private String autor;
     private Set<String> categorias = new HashSet<>();
@@ -75,7 +75,7 @@ public class Livro {
                 ", titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", categorias=" + categorias +
-                '}';
+                '}'+"\n";
     }
     }
 

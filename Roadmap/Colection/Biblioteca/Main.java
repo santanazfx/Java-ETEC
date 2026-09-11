@@ -16,6 +16,9 @@ public class Main {
         Cliente c2 = new Cliente(2, "Ana", 1);
         Cliente c3 = new Cliente(3, "Joe", 2);
 
+        Venda v1 = new Venda(1,"12/2/13",l1);
+        Venda v2 = new Venda(2,"12/2/13",l3);
+
 
         Biblioteca biblioteca = new Biblioteca();
 
@@ -26,7 +29,10 @@ public class Main {
         biblioteca.adicinarClienteFila(c1);
         biblioteca.adicinarClienteFila(c2);
         biblioteca.adicinarClienteFila(c3);
-
+        System.out.println(biblioteca.realizarVenda(v1));
+        biblioteca.historicoVenda();
+        System.out.println(biblioteca.verProximoCliente());
+        System.out.println(biblioteca.listarLivros());
 
         }catch (IllegalArgumentException | NullPointerException err) {
             System.out.println(err.getMessage());

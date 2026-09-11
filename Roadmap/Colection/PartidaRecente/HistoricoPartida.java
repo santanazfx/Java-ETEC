@@ -11,7 +11,7 @@ public class HistoricoPartida {
     }
 
     public Boolean salvarPartida(Partida partida){
-        if(partidas.size()<5) return partidas.offerLast(partida);
+        if(partidas.size() <= 5) return partidas.offerLast(partida);
         else {
             partidas.pollFirst();
             return partidas.offerLast(partida);

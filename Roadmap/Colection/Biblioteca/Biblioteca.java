@@ -6,6 +6,7 @@ public class Biblioteca {
     private List<Livro> livros = new ArrayList<>();
     private Map<Integer, Livro> livrosPorIsbn = new HashMap<>();
     private Queue<Cliente> filaClientes = new PriorityQueue<>(new ClienteComparator());
+    private Deque<Venda> realizarVenda = new ArrayDeque<>();
 
     public Biblioteca() {
     }
@@ -53,10 +54,6 @@ public class Biblioteca {
        else{return filaClientes.offer(cliente);}
     }
 
-    public Cliente chamarProximoCliente(){
-        return filaClientes.poll(); //vai retirar o cliente da fila (sout e esperado para ver quem e retirado)
-    }
-
     public Cliente verProximoCliente(){
         return filaClientes.peek(); //vai so ver quem e  cliente sem removelo!
     }
@@ -67,6 +64,20 @@ public class Biblioteca {
     public void fecharLoja(){
         while (!filaClientes.isEmpty()) filaClientes.poll();
     }
+
+    public boolean realizarVenda(Venda venda){
+        if (realizarVenda.size() >= 10) realizarVenda.pollFirst();
+        filaClientes.poll();
+        livros.remove(venda.getLivro());
+        livrosPorIsbn.remove(venda.getLivro().getIsbn());
+            return realizarVenda.offerLast(venda);
+    }
+
+    public Deque<Venda> historicoVenda(){
+//        for (Venda venda : realizarVenda) System.out.println(venda);
+        return realizarVenda;
+    }
+
     static class ClienteComparator implements Comparator<Cliente>{
         @Override
         public int compare(Cliente c1, Cliente c2) {
@@ -81,3 +92,4 @@ public class Biblioteca {
         }
     }
 }
+
