@@ -4,13 +4,13 @@
 
 package com.mycompany.imccalc;
 
-/**
- *
- * @author 026583
- */
 public class ImcCalc {
-
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ImcModel model = new ImcModel();
+        ImcView view = new ImcView();
+
+        ImcControle controle = new ImcControle(model, view);
+
+        view.setVisible(true);
     }
 }

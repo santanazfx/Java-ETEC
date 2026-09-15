@@ -32,7 +32,7 @@ public class ImcControle {
         double imc = model.calcularImc();
         String classificacao = model.obterClas(imc);
         
-        String resultado = String.format("IMC = %.2f (%s)",classificacao);
+        String resultado = String.format("IMC = %.2f (%s)", imc, classificacao);
         view.setResultado(resultado);
         
         
