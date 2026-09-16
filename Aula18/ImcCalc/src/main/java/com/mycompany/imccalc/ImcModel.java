@@ -4,10 +4,7 @@
  */
 package com.mycompany.imccalc;
 
-/**
- *
- * @author 026583
- */
+
 public class ImcModel {
     private double peso;
     private double altura;
