@@ -24,6 +24,11 @@ public class ConverView extends javax.swing.JFrame {
         labelResult.setText(texto);
     }
     
+    public void limparDisplay(){
+        txtCelcius.setText("");
+        labelResult.setText("");
+    }
+    
     
 
     public void exibirMensagem(String mensagem){
@@ -38,6 +43,7 @@ public class ConverView extends javax.swing.JFrame {
     public void addConverListener(java.awt.event.ActionListener listener){
         btnConverF.addActionListener(listener);
         btnConverC.addActionListener(listener);
+        btnLimpar.addActionListener(listener);
     }
 
     
@@ -52,6 +58,7 @@ public class ConverView extends javax.swing.JFrame {
         btnConverF = new javax.swing.JButton();
         labelResult = new javax.swing.JLabel();
         btnConverC = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,10 +69,11 @@ public class ConverView extends javax.swing.JFrame {
         btnConverF.setText("Tranformar F");
         btnConverF.addActionListener(this::btnConverFActionPerformed);
 
-        labelResult.setText("Resultado");
-
         btnConverC.setText("Transformar C");
         btnConverC.addActionListener(this::btnConverCActionPerformed);
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(this::btnLimparActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,15 +84,19 @@ public class ConverView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnConverF)
-                        .addGap(32, 32, 32)
+                        .addGap(40, 40, 40)
                         .addComponent(btnConverC))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelTemp)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(txtCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnLimpar)
+                    .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(152, 152, 152))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,9 +109,11 @@ public class ConverView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConverF)
                     .addComponent(btnConverC))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
+                .addComponent(btnLimpar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,6 +141,10 @@ public class ConverView extends javax.swing.JFrame {
     private void btnConverCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConverCActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,18 +175,22 @@ public class ConverView extends javax.swing.JFrame {
         return btnConverC;
     }
 
-
     public JButton getBtnConverF() {
         return btnConverF;
+    }
+    public JButton getBtnLimpar() {
+        return btnLimpar;
     }
 
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConverC;
     private javax.swing.JButton btnConverF;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelResult;
     private javax.swing.JLabel labelTemp;
     private javax.swing.JTextField txtCelcius;
     // End of variables declaration//GEN-END:variables
+
 }

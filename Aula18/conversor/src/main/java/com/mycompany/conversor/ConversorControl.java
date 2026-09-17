@@ -21,12 +21,19 @@ public class ConversorControl {
                 else if (e.getSource() == view.getBtnConverC()){
                 converterGrausC();
                 }
+                else if (e.getSource() == view.getBtnLimpar()){
+                view.limparDisplay();
+                }
             }
         });
     }
     public void converterGrausF(){
         try {
            double graus = Double.parseDouble(view.getGrausText());
+            if(view.getGrausText().length() > 6){
+                view.exibirMensagem("Digite um numero menor.");
+                return;
+            }
            
            model.setGraus(graus);
                   
@@ -49,14 +56,9 @@ public class ConversorControl {
             view.setResposta(String.format("%.1f C", celsius));
             
         } catch (NumberFormatException e) {
-            view.exibirMensagem("Nao digite letras");
+            view.exibirMensagem("Nao digite letras/caracteres especiais.");
         }
         
+    
     }
-
- 
-    
-    
-    
-    
 }
