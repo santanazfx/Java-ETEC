@@ -5,7 +5,7 @@ out/
 target/
 *.log
 *.iml
-
+cls
 # NetBeans
 nbproject/private/
 build/
@@ -13,3 +13,4 @@ dist/
 nbbuild/
 nbdist/
 .nb-gradle/
+cls.pub
