@@ -7,9 +7,10 @@ public class Cliente {
 
 
     public Cliente(int id,String nome,Integer prioriade){
-        this.id = id;
         this.nome = nome;
+        this.id = id;
         this.prioriade = prioriade;
+
     }
 
     public int getId() {

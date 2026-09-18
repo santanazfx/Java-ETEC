@@ -1,7 +1,7 @@
 package Colection.Biblioteca;
 
 
-import java.util.*;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -29,33 +29,17 @@ public class Main {
         biblioteca.adicinarClienteFila(c1);
         biblioteca.adicinarClienteFila(c2);
         biblioteca.adicinarClienteFila(c3);
-        System.out.println(biblioteca.realizarVenda(v1));
-        biblioteca.historicoVenda();
-        System.out.println(biblioteca.verProximoCliente());
-        System.out.println(biblioteca.listarLivros());
+
+        biblioteca.realizarVenda(v1);
+        biblioteca.realizarVenda(v2);
+        System.out.println(biblioteca.historicoVenda());
+
 
         }catch (IllegalArgumentException | NullPointerException err) {
             System.out.println(err.getMessage());
         }
 
-//        List<Livro> ordemIsbn = new LinkedList<>();
-        Queue<Livro> ordemIsbn = new PriorityQueue<>(new Biblioteca.LivroComparator().reversed());
-        ordemIsbn.add(new Livro(4187, "Joao e o pe de feijao", "Maria"));
-        ordemIsbn.add(new Livro(1235, "Noite", "Dotor Pedro"));
-        ordemIsbn.add(new Livro(4336, "Joao e o pe de feijao", "Maria"));
-        ordemIsbn.add(new Livro(1234, "Noites Brancas", "Doto"));
 
 
-//        while (!ordemIsbn.isEmpty()){
-//            System.out.println(ordemIsbn.poll());
-//        }
-        System.out.println("+++++++++");
-//        Collections.sort(ordemIsbn,new Biblioteca.LivroComparator().reversed());
-//        for(Livro livros : ordemIsbn){
-//            System.out.println(livros);
-//        }
-
-
-        // metodo de seguranca
     }
 }

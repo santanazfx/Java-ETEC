@@ -62,7 +62,6 @@ public class QueueBBQ {
         class StudentComparator implements Comparator<Student>{
 
             public int compare(Student s1, Student s2) {
-                //String comparison using compareTo() is case-sensitive.
                 return s1.getAge().compareTo(s2.getAge());
             }
         }
@@ -78,6 +77,7 @@ public class QueueBBQ {
 
                 // Sort by name, then by age
 //                Collections.sort(students, new StudentComparator());
+
                 students.sort(new StudentComparator()); //Funciona igual em cima
                 System.out.println("\nAfter Sorting:");
                 for (Student s : students) {
@@ -98,6 +98,12 @@ public class QueueBBQ {
 //        System.out.println("++++++++");
 //        for(Livro livros : ordemIsbn){
 //            System.out.println(livros);
+//        }
+//        static class LivroComparator implements Comparator<Livro>{
+//            @Override
+//            public int compare(Livro o1, Livro o2) {
+//                return o1.getIsbn().compareTo(o2.getIsbn());
+//            }
 //        }
             }
         }

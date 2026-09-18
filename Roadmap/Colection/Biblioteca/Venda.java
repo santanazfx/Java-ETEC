@@ -37,6 +37,8 @@ public class Venda {
         this.livro = livro;
     }
 
+
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -49,7 +51,7 @@ public class Venda {
     public String toString() {
         return "Venda{" +
                 "id=" + id +
-                ", cliente='" + getCliente() + '\'' +
+                ", cliente='" + cliente + '\'' +
                 ", data='" + data + '\'' +
                 ", livro=" + livro +
                 '}';

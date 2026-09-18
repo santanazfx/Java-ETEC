@@ -53,11 +53,9 @@ public class Biblioteca {
         if (filaClientes.contains(cliente)){ throw new IllegalArgumentException("Cliente ja esta na fila");}
        else{return filaClientes.offer(cliente);}
     }
-
     public Cliente verProximoCliente(){
         return filaClientes.peek(); //vai so ver quem e  cliente sem removelo!
     }
-
     public int quantidadeFila(){
         return filaClientes.size(); //retorna so o tamanho
     }
@@ -66,15 +64,17 @@ public class Biblioteca {
     }
 
     public boolean realizarVenda(Venda venda){
+        if(!livrosPorIsbn.containsKey(venda.getLivro().getIsbn())) throw new IllegalArgumentException("Livro nao existe na Biblioteca");
         if (realizarVenda.size() >= 10) realizarVenda.pollFirst();
-        filaClientes.poll();
-        livros.remove(venda.getLivro());
+        if (filaClientes.isEmpty()) throw new IllegalArgumentException("Fila de clientes vazia.");
+
+        venda.setCliente(filaClientes.poll());
         livrosPorIsbn.remove(venda.getLivro().getIsbn());
-            return realizarVenda.offerLast(venda);
+        livros.remove(venda.getLivro());
+        return realizarVenda.offerLast(venda);
     }
 
     public Deque<Venda> historicoVenda(){
-//        for (Venda venda : realizarVenda) System.out.println(venda);
         return realizarVenda;
     }
 
@@ -85,11 +85,5 @@ public class Biblioteca {
         }
     }
 
-    static class LivroComparator implements Comparator<Livro>{
-        @Override
-        public int compare(Livro o1, Livro o2) {
-            return o1.getIsbn().compareTo(o2.getIsbn());
-        }
-    }
 }
 
