@@ -1,8 +1,9 @@
 
 package com.mycompany.conversor;
 
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
+
+import javax.swing.*;
+import java.awt.event.*;
 
 
 
@@ -14,10 +15,16 @@ public class ConverView extends javax.swing.JFrame {
     
     public ConverView() {
         initComponents();
+        configurarTeclas();
+ 
     }
     
     public String getGrausText(){
         return txtCelcius.getText();
+    }
+    
+    public void setHistorico(String hist){
+        txtHistorico.setText(hist);
     }
     
     public void setResposta(String texto){
@@ -27,7 +34,13 @@ public class ConverView extends javax.swing.JFrame {
     public void limparDisplay(){
         txtCelcius.setText("");
         labelResult.setText("");
+        txtHistorico.setText("");
     }
+
+    public void setTxtCelcius(String txt) {
+       txtCelcius.setText(txt);
+    }
+    
     
     
 
@@ -46,7 +59,27 @@ public class ConverView extends javax.swing.JFrame {
         btnLimpar.addActionListener(listener);
     }
 
+    private void configurarTeclas() {
+        txtCelcius.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_F) {
+                    btnConverF.doClick();
+                    
+                }
+                if(e.getKeyCode() == KeyEvent.VK_G){
+                    btnConverC.doClick();
+                    
+                }
+                if(e.getKeyCode() == KeyEvent.VK_L){
+                    btnLimpar.doClick();
+                }
+            }
+        });
+    }
     
+      
+
  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -59,6 +92,8 @@ public class ConverView extends javax.swing.JFrame {
         labelResult = new javax.swing.JLabel();
         btnConverC = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtHistorico = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,44 +110,55 @@ public class ConverView extends javax.swing.JFrame {
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(this::btnLimparActionPerformed);
 
+        txtHistorico.setColumns(20);
+        txtHistorico.setRows(5);
+        jScrollPane1.setViewportView(txtHistorico);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnConverF)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnConverC))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(labelTemp)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(btnConverF)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(btnConverC)
+                .addGap(39, 39, 39))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(labelTemp)
+                .addGap(18, 18, 18)
+                .addComponent(txtCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLimpar)
-                    .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(152, 152, 152))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLimpar))
+                        .addGap(152, 152, 152))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTemp)
                     .addComponent(txtCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConverF)
-                    .addComponent(btnConverC))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnConverF, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnConverC, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnLimpar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(labelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
 
@@ -131,7 +177,7 @@ public class ConverView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCelciusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelciusActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtCelciusActionPerformed
 
     private void btnConverFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConverFActionPerformed
@@ -188,9 +234,11 @@ public class ConverView extends javax.swing.JFrame {
     private javax.swing.JButton btnConverF;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelResult;
     private javax.swing.JLabel labelTemp;
     private javax.swing.JTextField txtCelcius;
+    private javax.swing.JTextArea txtHistorico;
     // End of variables declaration//GEN-END:variables
 
 }

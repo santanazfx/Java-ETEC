@@ -1,7 +1,24 @@
 package com.mycompany.conversor;
 
+import java.util.*;
+
+
 public class ConverModel {
     private double graus;
+    private ArrayList<String> historicoC = new ArrayList<>();
+
+    public List<String> getHistoricoC() {
+        return historicoC;
+    }
+
+    public void setHistoricoC(ArrayList<String> historicoC) {
+        this.historicoC = historicoC;
+       
+    }
+    
+    public void addHistoricoC(String hist) {
+        historicoC.add(hist);
+    }
 
 
     public double getGrausC() {
@@ -20,6 +37,7 @@ public class ConverModel {
         this.graus = graus;
     }
 
+    public void apagarHist(){ historicoC.clear();}
  
     
     public double calcularConversaoF(){
@@ -28,6 +46,8 @@ public class ConverModel {
     public double calcularConversaoC(){
     return (graus - 32) * 5/9;
     }
+    
+    
     
     
 }
