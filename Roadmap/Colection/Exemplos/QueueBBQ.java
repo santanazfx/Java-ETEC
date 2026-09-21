@@ -1,7 +1,4 @@
-package Colection    ;
-
-import Colection.Biblioteca.Biblioteca;
-import Colection.Biblioteca.Livro;
+package Colection.Exemplos    ;
 
 import java.util.LinkedList;
 import java.util.*;
