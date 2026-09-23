@@ -48,6 +48,7 @@ public class Biblioteca {
         }
         return listaCat;
     }
+<<<<<<< Updated upstream
 
     public boolean adicinarClienteFila(Cliente cliente){
         if (filaClientes.contains(cliente)){ throw new IllegalArgumentException("Cliente ja esta na fila");}
@@ -87,3 +88,6 @@ public class Biblioteca {
 
 }
 
+=======
+}
+>>>>>>> Stashed changes
