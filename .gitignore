@@ -13,4 +13,4 @@ dist/
 nbbuild/
 nbdist/
 .nb-gradle/
-cls.pub
+*.pub
