@@ -18,7 +18,7 @@ public class QueueBBQ {
 
         //PriorytyQueue
 
-        Queue<String> fila = new PriorityQueue<>();
+        Queue<String> fila = new PriorityQueue<>();//so funciona se tiver parametro
 
 
         fila.add("D");

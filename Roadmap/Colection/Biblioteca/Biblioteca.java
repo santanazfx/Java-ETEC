@@ -11,6 +11,7 @@ public class Biblioteca {
     public Biblioteca() {
     }
 
+
     public Boolean cadastrarLivro(Livro livro){
         if (livros.contains(livro) || livrosPorIsbn.containsKey(livro.getIsbn())) {
             throw new IllegalArgumentException("Livro ja adicionado");
@@ -44,11 +45,11 @@ public class Biblioteca {
         for(Livro livro : livros){
             if (livro.getCategorias().contains(categoria)){
                 listaCat.add(livro);
-            }
+            }        return listaCat;
+
         }
         return listaCat;
     }
-<<<<<<< Updated upstream
 
     public boolean adicinarClienteFila(Cliente cliente){
         if (filaClientes.contains(cliente)){ throw new IllegalArgumentException("Cliente ja esta na fila");}
@@ -87,7 +88,3 @@ public class Biblioteca {
     }
 
 }
-
-=======
-}
->>>>>>> Stashed changes
