@@ -30,6 +30,10 @@ public class Piloto {
         return nome;
     }
 
+    public Set<Categoria> getCategorias() {
+        return categorias;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -48,5 +52,16 @@ public class Piloto {
 
     public void setPontos(Integer pontos) {
         this.pontos = pontos;
+    }
+
+    @Override
+    public String toString() {
+        return "Piloto{" +
+                "numero=" + numero +
+                ", nome='" + nome + '\'' +
+                ", equipe='" + equipe + '\'' +
+                ", pontos=" + pontos +
+                ", categorias=" + categorias +
+                '}';
     }
 }
