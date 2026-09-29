@@ -1,5 +1,7 @@
 package Colection.Exemplos;
 
+import Colection.FilaClientes.Pedido;
+
 import java.util.*;
 
 
@@ -39,6 +41,15 @@ public class IteratorEX {
         //ou entrando no map e o percorrendo
 //        Iterator<Map.Entry<String, String>> entryIterator = alunos.entrySet().iterator();
 
+
+        //e possivel acessar as classe pelo iterator.
+//        Iterator<Pedido> iterator = pedidos.iterator();
+//        while (iterator.hasNext()){
+//            Pedido pedido = iterator.next();
+//            if(pedido.getValor() < valor){
+//                iterator.remove();
+//            }
+//        }
 
     }
 }

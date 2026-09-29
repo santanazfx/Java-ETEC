@@ -23,9 +23,8 @@ public class Restaurante {
             Pedido pedido = iterator.next();
             if(pedido.getValor() < valor){
                 iterator.remove();
+                }
             }
-            }
-
         }
 
 
