@@ -1,6 +1,5 @@
 package Colection.Exemplos;
 
-import Colection.FilaClientes.Pedido;
 
 import java.util.*;
 
@@ -28,7 +27,6 @@ public class IteratorEX {
         while (listIterator.hasPrevious()){
             System.out.println(listIterator.previous());
         }
-
 
 
 //        Map<String, String> alunos = new HashMap<>();

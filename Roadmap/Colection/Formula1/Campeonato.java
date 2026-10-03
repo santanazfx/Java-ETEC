@@ -27,19 +27,43 @@ public class Campeonato {
         return filaEntrevistas.offer(piloto);
     }
 
+    public Piloto realizarEntrevista(){
+        return filaEntrevistas.poll();
+    }
+
     public void removerPorCategoria(Piloto.Categoria categoria){
         Iterator<Piloto> iterator = pilotos.iterator();
         while (iterator.hasNext()){
             Piloto piloto = iterator.next();
+
             if (piloto.getCategorias().contains(categoria)) {
                 pilotosPorNumero.remove(piloto.getNumero());
                 iterator.remove();
+
+
             }
         }
+    }
+    //funciona tbm com o codigo abaixo que usar labda mas so funncioa com list e set pelo visto
+    //pilotos.removeIf(pilot -> pilot.getCategorias().contains(categoria));
 
+    public List<Piloto> listarPorCategoria(Piloto.Categoria categoria) {
+        List<Piloto> pilotsCat = new ArrayList<>();
+        Iterator<Piloto> pilotoIterator = pilotos.iterator();
+        while(pilotoIterator.hasNext()) {
+            Piloto piloto = pilotoIterator.next();
+            if(piloto.getCategorias().contains(categoria)){
+                pilotsCat.add(piloto);
+            }
+        }
+        return pilotsCat;
     }
 
-    public void listarPorCategoria(Piloto.Categoria categoria){
-
+    @Override
+    public String toString() {
+        return "Campeonato{" +
+                "pilotos=" + pilotos +
+                ",\nfilaEntrevistas=" + filaEntrevistas +
+                '}';
     }
 }

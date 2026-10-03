@@ -4,7 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EnumEx {
+
+    public enum MesesDoAno{
+    JANEIRO(1, "Janeiro"),
+    FEVEREIRO(2, "Fevereiro"),
+    MARCO(3, "Março");
+
+    private final int valor;
+    private final String descricao;
+
+    MesesDoAno(int valor, String descricao) {
+        this.valor = valor;
+        this.descricao = descricao;
+    }
+
+    public int getValor() {
+        return this.valor;
+    }
+    public String getDescricao() {
+        return this.descricao;
+    }
+}
+
     public static void main(String[] args) {
+
+//        MesesDoAno mes = MesesDoAno.FEVEREIRO;
+//        System.out.println("Valor da constante: " + mes +
+//                "\n" + "Valor numérico do mês: " + mes.getValor() +
+//                "\n" + "Descrição do mês: " + mes.getDescricao());
+
         enum tamanho{ PEQUENO, MEDIO, GRANDE, EXTRAGRANDE  }//Os numeros dos parenteses sao as const do enum.
         tamanho tamanhoPizza;
         tamanhoPizza = tamanho.MEDIO;
@@ -15,7 +43,6 @@ public class EnumEx {
         tamanho.valueOf("PEQUENO");
 
         List<tamanho> enumarray = new ArrayList<>(); // retorna um array do tipo do enum
-
 
 
         switch (tamanhoPizza){
