@@ -7,23 +7,24 @@ public class Campeonato {
     private Map<Integer,Piloto> pilotosPorNumero = new HashMap<>();
     private Queue<Piloto> filaEntrevistas = new LinkedList();
 
-    public Boolean adcionarPiloto(Piloto piloto){
+    public boolean adcionarPiloto(Piloto piloto){
         if (pilotos.contains(piloto)) throw new IllegalArgumentException("Piloto ja adicionado");
+        if (pilotosPorNumero.containsKey(piloto.getNumero())) throw new IllegalArgumentException("Piloto ja adicionado");
         pilotosPorNumero.put(piloto.getNumero(),piloto);
         return pilotos.add(piloto);
     }
 
     public void removerPiloto(Integer numero){
         if (!pilotosPorNumero.containsKey(numero)) throw new IllegalArgumentException("Piloto nao encontrato");
-        pilotosPorNumero.remove(numero);
         pilotos.remove(pilotosPorNumero.get(numero));
+        pilotosPorNumero.remove(numero);
     }
 
     public Piloto buscarPiloto(Integer numero){
         return pilotosPorNumero.get(numero);
     }
 
-    public Boolean adicionarEntrevista(Piloto piloto){
+    public boolean adicionarEntrevista(Piloto piloto){
         return filaEntrevistas.offer(piloto);
     }
 
