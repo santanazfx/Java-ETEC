@@ -4,7 +4,6 @@
     import java.util.*;
 
     public class Piloto {
-        public enum Categoria {ROOKIE, EXPERIENTE,CAMPEAO}
 
         private Integer numero;
         private String nome;

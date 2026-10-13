@@ -2,14 +2,14 @@ package Colection.Formula1;
 
 public class Main {
     public static void main(String[] args) {
-        Piloto p1 = new Piloto(5,"Lecrerc","Ferraros",1, Piloto.Categoria.ROOKIE);
-        Piloto p2 = new Piloto(1,"Max","Redbulso",88, Piloto.Categoria.CAMPEAO);
-        Piloto p3 = new Piloto(2,"Ramires","Ferraros",55, Piloto.Categoria.EXPERIENTE);
-        Piloto p4 = new Piloto(4,"Borboleto","Audi",70, Piloto.Categoria.ROOKIE);
-        Piloto p5 = new Piloto(6,"Hamilton","Mercedes",79, Piloto.Categoria.ROOKIE);
-        Piloto p6 = new Piloto(7,"Mackenn","Mclaren",86, Piloto.Categoria.EXPERIENTE);
-        Piloto p7 = new Piloto(9,"Albino","Mclaren",26, Piloto.Categoria.EXPERIENTE);
-        Piloto p8 = new Piloto(10,"MaxJR","Redbulso",40, Piloto.Categoria.CAMPEAO);
+        Piloto p1 = new Piloto(5,"Lecrerc","Ferraros",1, Categoria.ROOKIE);
+        Piloto p2 = new Piloto(1,"Max","Redbulso",88, Categoria.CAMPEAO);
+        Piloto p3 = new Piloto(2,"Ramires","Ferraros",55, Categoria.EXPERIENTE);
+        Piloto p4 = new Piloto(4,"Borboleto","Audi",70, Categoria.ROOKIE);
+        Piloto p5 = new Piloto(6,"Hamilton","Mercedes",79, Categoria.ROOKIE);
+        Piloto p6 = new Piloto(7,"Mackenn","Mclaren",86, Categoria.EXPERIENTE);
+        Piloto p7 = new Piloto(9,"Albino","Mclaren",26, Categoria.EXPERIENTE);
+        Piloto p8 = new Piloto(10,"MaxJR","Redbulso",40, Categoria.CAMPEAO);
 
         Campeonato c1 = new Campeonato();
 
@@ -29,8 +29,8 @@ public class Main {
 
         System.out.println(c1.toString());
         System.out.println("============");
-        c1.removerPorCategoria(Piloto.Categoria.ROOKIE);
-        System.out.println(c1.listarPorCategoria(Piloto.Categoria.EXPERIENTE));
+        c1.removerPorCategoria(Categoria.ROOKIE);
+        System.out.println(c1.listarPorCategoria(Categoria.EXPERIENTE));
         System.out.println("============");
         System.out.println(c1.toString());
         c1.realizarEntrevista();

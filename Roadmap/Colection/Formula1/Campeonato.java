@@ -32,7 +32,7 @@ public class Campeonato {
         return filaEntrevistas.poll();
     }
 
-    public void removerPorCategoria(Piloto.Categoria categoria){
+    public void removerPorCategoria(Categoria categoria){
         Iterator<Piloto> iterator = pilotos.iterator();
         while (iterator.hasNext()){
             Piloto piloto = iterator.next();
@@ -48,7 +48,7 @@ public class Campeonato {
     //funciona tbm com o codigo abaixo que usar labda mas so funncioa com list e set pelo visto
     //pilotos.removeIf(pilot -> pilot.getCategorias().contains(categoria));
 
-    public List<Piloto> listarPorCategoria(Piloto.Categoria categoria) {
+    public List<Piloto> listarPorCategoria(Categoria categoria) {
         List<Piloto> pilotsCat = new ArrayList<>();
         Iterator<Piloto> pilotoIterator = pilotos.iterator();
         while(pilotoIterator.hasNext()) {

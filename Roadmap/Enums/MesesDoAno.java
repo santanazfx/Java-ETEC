@@ -1,4 +1,4 @@
-package Enums.Exemplos;
+package Enums;
 
 public enum MesesDoAno {
     JANEIRO(1, "Janeiro"){

@@ -1,4 +1,4 @@
-package Enums.Exemplos;
+package Enums;
 
 
 import java.util.EnumMap;
@@ -19,14 +19,9 @@ public class EnumEx {
 
         EnumMap<MesesDoAno, String> enumMap = new EnumMap<>(MesesDoAno.class);
         enumMap.put(MesesDoAno.FEVEREIRO, "Fevereiro");
+        System.out.println(enumMap);
 
-
-
-
-
-
-
-//        enum tamanho{ PEQUENO, MEDIO, GRANDE, EXTRAGRANDE  }//Os numeros dos parenteses sao as const do enum.
+//       enum tamanho{ PEQUENO, MEDIO, GRANDE, EXTRAGRANDE  }//Os numeros dos parenteses sao as const do enum.
 //        tamanho tamanhoPizza;
 //        tamanhoPizza = tamanho.MEDIO;
 //        tamanho.PEQUENO.compareTo(tamanho.MEDIO);// metodos
