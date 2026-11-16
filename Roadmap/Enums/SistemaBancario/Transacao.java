@@ -3,6 +3,7 @@ package Enums.SistemaBancario;
 public class Transacao {
     private double valor;
     private NivelRisco nivelRisco;
+
     private TipoTransacao tipoTransacao;
     private Integer identificador;
 

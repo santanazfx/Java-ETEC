@@ -13,4 +13,5 @@ public enum Categoria {
         this.descricao = descricao;
         this.EXPERIENCIA = experiencia;
     }
+
 }
