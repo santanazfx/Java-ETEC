@@ -14,7 +14,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-public class TelaAluno extends JFrame {
+public class TelaAluno extends javax.swing.JFrame {
 
     private AlunoDAO dao = new AlunoDAO();
 

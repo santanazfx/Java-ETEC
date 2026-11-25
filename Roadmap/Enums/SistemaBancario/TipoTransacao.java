@@ -4,25 +4,25 @@ public enum TipoTransacao {
     DEPOSITO("Deposito",true){
         @Override
         double taxaOperacao(double valor) {
-            return valor * 0.03;
+            return valor - valor * 0.03;
         }
     },
     TRANSFERENCIA("Transferencia",false){
         @Override
         double taxaOperacao(double valor) {
-            return valor * 0.1;
+            return valor - valor * 0.1;
         }
     },
     SAQUE("Saque",false){
         @Override
         double taxaOperacao(double valor) {
-            return valor * 0.05;
+            return valor - valor * 0.05;
         }
     },
     PAGAMENTO("Pagamento",false){
         @Override
         double taxaOperacao(double valor) {
-            return valor * 0.05;
+            return valor - valor * 0.05;
         }
     };
 
